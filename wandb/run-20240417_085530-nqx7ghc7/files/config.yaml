@@ -1,0 +1,119 @@
+wandb_version: 1
+
+com_round:
+  desc: null
+  value: 200
+local_ep:
+  desc: null
+  value: 5
+sever_ep:
+  desc: null
+  value: null
+batch_size:
+  desc: null
+  value: 128
+lr:
+  desc: null
+  value: 0.01
+momentum:
+  desc: null
+  value: 0.9
+weight_decay:
+  desc: null
+  value: 0.0001
+num_workers:
+  desc: null
+  value: 4
+num_users:
+  desc: null
+  value: 5
+frac:
+  desc: null
+  value: 1
+domains:
+  desc: null
+  value:
+  - clipart
+  - infograph
+  - painting
+  - quickdraw
+  - real
+  - sketch
+data_type:
+  desc: null
+  value: imagenette
+data_path_train:
+  desc: null
+  value: /dataspace/imagenette/train
+data_path_test:
+  desc: null
+  value: /dataspace/imagenette/test
+data_path_server:
+  desc: null
+  value: null
+sample_data_nums:
+  desc: null
+  value: null
+labels:
+  desc: null
+  value:
+  - 1
+  - 73
+  - 11
+  - 19
+  - 29
+  - 31
+  - 290
+  - 121
+  - 225
+  - 39
+partition:
+  desc: null
+  value: iid
+beta:
+  desc: null
+  value: 0.5
+net:
+  desc: null
+  value: holocron_resnet18
+net_path:
+  desc: null
+  value: null
+seed:
+  desc: null
+  value: 2021
+wandb:
+  desc: null
+  value: 1
+exp_name:
+  desc: null
+  value: hello-world
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.0
+    cli_version: 0.16.6
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1713358530.0
+    t:
+      1:
+      - 1
+      - 41
+      - 49
+      - 55
+      2:
+      - 1
+      - 41
+      - 49
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.8.0
+      5: 0.16.6
+      8:
+      - 5
+      13: linux-x86_64

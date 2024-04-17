@@ -1,0 +1,1 @@
+{"test_loss": 0.0, "_timestamp": 1713358745.756308, "_runtime": 160.87466716766357, "_step": 32, "test_acc": 100.0, "bst_acc": 100.0, "_wandb": {"runtime": 171}}

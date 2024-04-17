@@ -1,0 +1,22 @@
+
+loading raw imagenet1000 train dataset from /dataspace/imagenette/train
+Traceback (most recent call last):
+  File "multi_round.py", line 136, in <module>
+    train_dataset, test_loader, user_groups, server_trainloader, num_classes = get_FL_dataset(args)
+  File "multi_round.py", line 42, in get_FL_dataset
+    train_dataset, test_dataset, user_groups, traindata_cls_counts = partition_data(args.data_type, args.partition,
+  File "/Federated_Generative_Learning/helper/dataset.py", line 148, in partition_data
+    X_train, y_train, X_test, y_test, train_dataset, test_dataset = load_data(dataset, train_dir, test_dir)
+  File "/Federated_Generative_Learning/helper/dataset.py", line 94, in load_data
+    test_dataset = get_dataset(data_path=test_dir, data_type=dataset, if_syn=False, if_train=False)
+  File "/Federated_Generative_Learning/helper/dataset.py", line 315, in get_dataset
+    dataset_all =torchvision.datasets.ImageFolder(root=data_path,transform=transform_test)
+  File "/opt/conda/envs/fgl/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 309, in __init__
+    super().__init__(
+  File "/opt/conda/envs/fgl/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 144, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "/opt/conda/envs/fgl/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 218, in find_classes
+    return find_classes(directory)
+  File "/opt/conda/envs/fgl/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 40, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [Errno 2] No such file or directory: '/dataspace/imagenette/test'
