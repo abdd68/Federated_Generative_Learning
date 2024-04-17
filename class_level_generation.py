@@ -123,7 +123,7 @@ def gen_data_imagenet(pipe, syn_data_dir, start_num, per_class_nums, data_type):
                         "sea slug, nudibranch",
                         "hornbill",
                         "cock"]
-        labels = [i for i in range(100)]
+        labels = [i for i in range(100)] 
     elif data_type == "imagenette":
         label_list = ["tench", "English springer", "cassette player", "chain saw",
                         "church", "French horn", "garbage truck", "gas pump", "golf ball", "parachute"] 
