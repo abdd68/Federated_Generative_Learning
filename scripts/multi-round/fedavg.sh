@@ -21,3 +21,4 @@ CUDA_VISIBLE_DEVICES=$gpu_id python multi_round.py \
 
 
 # sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenette" "hello-world"  /codespace/imagenette/train  /codespace/imagenette/test dirichlet 0.01 0
+# sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenet100" "hello-world"  /codespace/imagenet100/train  /codespace/imagenet100/test dirichlet 0.1 0

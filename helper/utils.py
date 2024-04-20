@@ -141,7 +141,7 @@ def train(net, trainloader, optimizer, if_log=False):
         total += targets.size(0)
         correct += predicted.eq(targets).sum().item()
         if if_log:
-            progress_bar(batch_idx, len(trainloader), 'Loss: %.3f | Acc: %.3f%% (%d/%d)'
+            progress_bar(batch_idx, len(trainloader), 'Train_Loss: %.3f | Acc: %.3f%% (%d/%d)'
                         % (train_loss/(batch_idx+1), 100.*correct/total, correct, total))
     return correct, total, train_loss
 
