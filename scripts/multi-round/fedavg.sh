@@ -17,7 +17,7 @@ CUDA_VISIBLE_DEVICES=$gpu_id python multi_round.py \
     --data_path_test $data_path_test \
     --partition $partition \
     --beta $beta \
-    --wandb 1 \
+    --wandb 1 --local_ep 1 --com_round 5\
 
 
-# sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenette" "hello-world"  /codespace/imagenette/train  /codespace/imagenette/test iid 0.5 0
+# sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenette" "hello-world"  /codespace/imagenette/train  /codespace/imagenette/test dirichlet 0.01 0
