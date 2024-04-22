@@ -16,7 +16,7 @@ def get_model(net_type, net_weight_path=None, num_classes=10):
     elif "resnet50" in net_type:
         net = torchvision.models.get_model("resnet50", weights=None, num_classes=num_classes)
         # net = holocron_resnet50(num_classes=num_classes)
-    elif "diffusion" in net_type:
+    elif "stable_diffusion" in net_type:
         net = "stabilityai/stable-diffusion-2-1-base"
         net = StableDiffusionPipeline.from_pretrained(net, torch_dtype=torch.float16, 
                                                     requires_safety_checker = False, safety_checker=None,

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-net=$1  # choices = ['holocron_resnet18', 'holocron_resnet34', 'holocron_resnet50', 'resnet50']
+net=$1  # choices = ['holocron_resnet18', 'holocron_resnet34', 'holocron_resnet50', 'resnet50', 'stable_diffusion']
 dataset=$2    # choices=["imagenet100", "imagenette", "imagefruit", "imageyellow", "imagesquawk", "domainnet"]
 exp_name=$3
 data_path_train=$4
@@ -20,5 +20,6 @@ CUDA_VISIBLE_DEVICES=$gpu_id python multi_round.py \
     --wandb 1 --local_ep 1 --com_round 5\
 
 
-# sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenette" "hello-world"  /codespace/imagenette/train  /codespace/imagenette/test dirichlet 0.01 0
-# sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenet100" "hello-world"  /codespace/imagenet100/train  /codespace/imagenet100/test dirichlet 0.1 0
+# sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenette" "hello-world"  /codespace/imagenet1000/train  /codespace/imagenet1000/test dirichlet 0.1 0
+# sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenet100" "hello-world"  /codespace/imagenet1000/train  /codespace/imagenet1000/test dirichlet 0.1 0
+sh scripts/multi-round/fedavg.sh 'holocron_resnet18' "imagenette" "hello-world"  /codespace/imagenet1000/train  /codespace/imagenet1000/test dirichlet 0.1 2
