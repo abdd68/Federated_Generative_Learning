@@ -3,6 +3,7 @@ import torch
 from holocron.models.classification import resnet34 as holocron_resnet34
 from holocron.models.classification import resnet18 as holocron_resnet18
 from holocron.models.classification import resnet18 as holocron_resnet50
+from diffusers import StableDiffusionPipeline
 import torchvision
 
 def get_model(net_type, net_weight_path=None, num_classes=10):
