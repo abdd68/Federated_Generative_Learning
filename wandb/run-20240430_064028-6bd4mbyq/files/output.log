@@ -1,0 +1,16 @@
+04/30/2024 06:40:29 - INFO - __main__ - ***** Running training *****
+04/30/2024 06:40:29 - INFO - __main__ -   Num examples = 5
+04/30/2024 06:40:29 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:40:29 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:40:29 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:40:29 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:40:29 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:40:29 - INFO - __main__ -   Total optimization steps = 500
+                                                                                                                                                          Traceback (most recent call last):
+  File "train_dreambooth_lora.py", line 1445, in <module>                                                                 | 1/500 [00:00<06:39,  1.25it/s]
+    main(args)
+  File "train_dreambooth_lora.py", line 1316, in main
+    unet = local_update(args, train_dataloader, accelerator, unet, vae, noise_scheduler, text_encoder, weight_dtype, optimizer, params_to_optimize, lr_scheduler, progress_bar)
+  File "train_dreambooth_lora.py", line 857, in local_update
+    global_step += 1
+UnboundLocalError: local variable 'global_step' referenced before assignment

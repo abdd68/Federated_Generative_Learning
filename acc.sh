@@ -1,4 +1,5 @@
 accelerate launch train_dreambooth_lora.py \
+  --num_users=2 \
   --instance_data_dir="./dog" \
   --output_dir="./output" \
   --instance_prompt="a photo of sks dog" \
@@ -15,4 +16,3 @@ accelerate launch train_dreambooth_lora.py \
   --validation_epochs=50 \
   --seed="0" \
   --push_to_hub
-  #   --pretrained_model_name_or_path= 'runwayml/stable-diffusion-v1-5'  \

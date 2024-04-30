@@ -755,6 +755,107 @@ def average_weights(w):
             w_avg[key] = torch.div(w_avg[key], len(w))
     return w_avg
 
+def local_update(args, train_dataloader, accelerator, unet, vae, noise_scheduler, text_encoder, weight_dtype, optimizer, params_to_optimize, lr_scheduler, progress_bar, global_step):
+    def unwrap_model(model):
+        model = accelerator.unwrap_model(model)
+        model = model._orig_mod if is_compiled_module(model) else model
+        return model
+    
+    for epoch in range(0, args.num_train_epochs):
+        for step, batch in enumerate(train_dataloader):
+            with accelerator.accumulate(unet):
+                pixel_values = batch["pixel_values"].to(dtype=weight_dtype)
+
+                if vae is not None:
+                    # Convert images to latent space
+                    model_input = vae.encode(pixel_values).latent_dist.sample()
+                    model_input = model_input * vae.config.scaling_factor
+                else:
+                    model_input = pixel_values
+
+                # Sample noise that we'll add to the latents
+                noise = torch.randn_like(model_input)
+                bsz, channels, height, width = model_input.shape
+                # Sample a random timestep for each image
+                timesteps = torch.randint(
+                    0, noise_scheduler.config.num_train_timesteps, (bsz,), device=model_input.device
+                )
+                timesteps = timesteps.long()
+
+                # Add noise to the model input according to the noise magnitude at each timestep
+                # (this is the forward diffusion process)
+                noisy_model_input = noise_scheduler.add_noise(model_input, noise, timesteps)
+
+                # Get the text embedding for conditioning
+                if args.pre_compute_text_embeddings:
+                    encoder_hidden_states = batch["input_ids"]
+                else:
+                    encoder_hidden_states = encode_prompt(
+                        text_encoder,
+                        batch["input_ids"],
+                        batch["attention_mask"],
+                        text_encoder_use_attention_mask=args.text_encoder_use_attention_mask,
+                    )
+
+                if unwrap_model(unet).config.in_channels == channels * 2:
+                    noisy_model_input = torch.cat([noisy_model_input, noisy_model_input], dim=1)
+
+                if args.class_labels_conditioning == "timesteps":
+                    class_labels = timesteps
+                else:
+                    class_labels = None
+
+                # Predict the noise residual
+                model_pred = unet(
+                    noisy_model_input,
+                    timesteps,
+                    encoder_hidden_states,
+                    class_labels=class_labels,
+                    return_dict=False,
+                )[0]
+
+                # if model predicts variance, throw away the prediction. we will only train on the
+                # simplified training objective. This means that all schedulers using the fine tuned
+                # model must be configured to use one of the fixed variance variance types.
+                if model_pred.shape[1] == 6:
+                    model_pred, _ = torch.chunk(model_pred, 2, dim=1)
+
+                # Get the target for loss depending on the prediction type
+                if noise_scheduler.config.prediction_type == "epsilon":
+                    target = noise
+                elif noise_scheduler.config.prediction_type == "v_prediction":
+                    target = noise_scheduler.get_velocity(model_input, noise, timesteps)
+                else:
+                    raise ValueError(f"Unknown prediction type {noise_scheduler.config.prediction_type}")
+
+                if args.with_prior_preservation:
+                    # Chunk the noise and model_pred into two parts and compute the loss on each part separately.
+                    model_pred, model_pred_prior = torch.chunk(model_pred, 2, dim=0)
+                    target, target_prior = torch.chunk(target, 2, dim=0)
+
+                    # Compute instance loss
+                    loss = F.mse_loss(model_pred.float(), target.float(), reduction="mean")
+
+                    # Compute prior loss
+                    prior_loss = F.mse_loss(model_pred_prior.float(), target_prior.float(), reduction="mean")
+
+                    # Add the prior loss to the instance loss.
+                    loss = loss + args.prior_loss_weight * prior_loss
+                else:
+                    loss = F.mse_loss(model_pred.float(), target.float(), reduction="mean")
+
+                accelerator.backward(loss)
+                if accelerator.sync_gradients:
+                    accelerator.clip_grad_norm_(params_to_optimize, args.max_grad_norm)
+                optimizer.step()
+                lr_scheduler.step()
+                optimizer.zero_grad()
+
+            # Checks if the accelerator has performed an optimization step behind the scenes
+            if accelerator.sync_gradients:
+                progress_bar.update(1)
+                global_step += 1
+    return unet
 
 def main(args):
     if args.report_to == "wandb" and args.hub_token is not None:
@@ -1149,6 +1250,7 @@ def main(args):
             )
 
     # Dataset and DataLoaders creation:
+    breakpoint()
     for com in tqdm(range(args.com_round)):
         local_weights = []
         m = max(int(args.frac * args.num_users), 1)
@@ -1212,104 +1314,8 @@ def main(args):
             global_step, first_epoch, initial_global_step  = 0, 0, 0
 
             progress_bar = tqdm(range(0, args.max_train_steps), initial=initial_global_step, desc="Steps", disable=not accelerator.is_local_main_process)
-            
-            for epoch in range(0, args.num_train_epochs):
-                for step, batch in enumerate(train_dataloader): # >>> begins 
-                    with accelerator.accumulate(unet):
-                        pixel_values = batch["pixel_values"].to(dtype=weight_dtype)
-
-                        if vae is not None:
-                            # Convert images to latent space
-                            model_input = vae.encode(pixel_values).latent_dist.sample()
-                            model_input = model_input * vae.config.scaling_factor
-                        else:
-                            model_input = pixel_values
-
-                        # Sample noise that we'll add to the latents
-                        noise = torch.randn_like(model_input)
-                        bsz, channels, height, width = model_input.shape
-                        # Sample a random timestep for each image
-                        timesteps = torch.randint(
-                            0, noise_scheduler.config.num_train_timesteps, (bsz,), device=model_input.device
-                        )
-                        timesteps = timesteps.long()
-
-                        # Add noise to the model input according to the noise magnitude at each timestep
-                        # (this is the forward diffusion process)
-                        noisy_model_input = noise_scheduler.add_noise(model_input, noise, timesteps)
-
-                        # Get the text embedding for conditioning
-                        if args.pre_compute_text_embeddings:
-                            encoder_hidden_states = batch["input_ids"]
-                        else:
-                            encoder_hidden_states = encode_prompt(
-                                text_encoder,
-                                batch["input_ids"],
-                                batch["attention_mask"],
-                                text_encoder_use_attention_mask=args.text_encoder_use_attention_mask,
-                            )
-
-                        if unwrap_model(unet).config.in_channels == channels * 2:
-                            noisy_model_input = torch.cat([noisy_model_input, noisy_model_input], dim=1)
-
-                        if args.class_labels_conditioning == "timesteps":
-                            class_labels = timesteps
-                        else:
-                            class_labels = None
-
-                        # Predict the noise residual
-                        model_pred = unet(
-                            noisy_model_input,
-                            timesteps,
-                            encoder_hidden_states,
-                            class_labels=class_labels,
-                            return_dict=False,
-                        )[0]
-
-                        # if model predicts variance, throw away the prediction. we will only train on the
-                        # simplified training objective. This means that all schedulers using the fine tuned
-                        # model must be configured to use one of the fixed variance variance types.
-                        if model_pred.shape[1] == 6:
-                            model_pred, _ = torch.chunk(model_pred, 2, dim=1)
-
-                        # Get the target for loss depending on the prediction type
-                        if noise_scheduler.config.prediction_type == "epsilon":
-                            target = noise
-                        elif noise_scheduler.config.prediction_type == "v_prediction":
-                            target = noise_scheduler.get_velocity(model_input, noise, timesteps)
-                        else:
-                            raise ValueError(f"Unknown prediction type {noise_scheduler.config.prediction_type}")
-
-                        if args.with_prior_preservation:
-                            # Chunk the noise and model_pred into two parts and compute the loss on each part separately.
-                            model_pred, model_pred_prior = torch.chunk(model_pred, 2, dim=0)
-                            target, target_prior = torch.chunk(target, 2, dim=0)
-
-                            # Compute instance loss
-                            loss = F.mse_loss(model_pred.float(), target.float(), reduction="mean")
-
-                            # Compute prior loss
-                            prior_loss = F.mse_loss(model_pred_prior.float(), target_prior.float(), reduction="mean")
-
-                            # Add the prior loss to the instance loss.
-                            loss = loss + args.prior_loss_weight * prior_loss
-                        else:
-                            loss = F.mse_loss(model_pred.float(), target.float(), reduction="mean")
-
-                        accelerator.backward(loss)
-                        if accelerator.sync_gradients:
-                            accelerator.clip_grad_norm_(params_to_optimize, args.max_grad_norm)
-                        optimizer.step()
-                        lr_scheduler.step()
-                        optimizer.zero_grad()
-                        
-
-                    # Checks if the accelerator has performed an optimization step behind the scenes
-                    if accelerator.sync_gradients:
-                        progress_bar.update(1)
-                        global_step += 1
-                    
-            local_weights.append(copy.deepcopy(unet))  # >>> ends
+            unet = local_update(args, train_dataloader, accelerator, unet, vae, noise_scheduler, text_encoder, weight_dtype, optimizer, params_to_optimize, lr_scheduler, progress_bar, global_step)
+            local_weights.append(copy.deepcopy(unet)) 
         
         unet = average_weights(local_weights)
 

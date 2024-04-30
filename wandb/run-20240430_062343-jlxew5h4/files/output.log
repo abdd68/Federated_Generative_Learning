@@ -56,3 +56,383 @@ Steps:   0%|▏                                                                 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+04/30/2024 06:26:08 - INFO - __main__ -   Num examples = 5██████████████████████████████████████████████████████████████| 500/500 [02:23<00:00,  3.45it/s]
+04/30/2024 06:26:08 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:26:08 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:26:08 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:26:08 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:26:08 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:26:08 - INFO - __main__ -   Total optimization steps = 500
+Steps: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [02:23<00:00,  3.48it/s]
+                                                                                                                                                          04/30/2024 06:26:08 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+04/30/2024 06:26:08 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.                 | 0/500 [00:00<?, ?it/s]
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:34,  3.22it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+04/30/2024 06:28:46 - INFO - __main__ -   Num batches each epoch = 1████████████████████████████████████████████████████| 500/500 [02:38<00:00,  3.15it/s]
+04/30/2024 06:28:46 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:28:46 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:28:46 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:28:46 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:28:46 - INFO - __main__ -   Total optimization steps = 500
+Steps: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [02:38<00:00,  3.15it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 06:28:47 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+04/30/2024 06:28:47 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.         | 1/500 [00:00<02:32,  3.27it/s]
+04/30/2024 06:28:47 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+04/30/2024 06:31:25 - INFO - __main__ -   Num examples = 5██████████████████████████████████████████████████████████████| 500/500 [02:38<00:00,  3.19it/s]
+04/30/2024 06:31:25 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:31:25 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:31:25 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:31:25 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:31:25 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:31:25 - INFO - __main__ -   Total optimization steps = 500
+Steps: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [02:38<00:00,  3.15it/s]
+                                                                                                                                                          04/30/2024 06:31:26 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+04/30/2024 06:31:26 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.                 | 0/500 [00:00<?, ?it/s]
+04/30/2024 06:31:26 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.         | 1/500 [00:00<02:25,  3.44it/s]
+04/30/2024 06:31:26 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+04/30/2024 06:33:47 - INFO - __main__ -   Num batches each epoch = 1████████████████████████████████████████████████████| 500/500 [02:21<00:00,  3.58it/s]
+04/30/2024 06:33:47 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:33:47 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:33:47 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:33:47 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:33:47 - INFO - __main__ -   Total optimization steps = 500
+Steps: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [02:22<00:00,  3.52it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 06:33:48 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+04/30/2024 06:33:48 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.         | 1/500 [00:00<02:40,  3.12it/s]
+04/30/2024 06:33:48 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+04/30/2024 06:33:48 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+04/30/2024 06:33:48 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  File "train_dreambooth_lora.py", line 1440, in <module>███████████████████████████████████████████████████████████████| 500/500 [02:42<00:00,  3.09it/s]
+    accelerator.end_training()
+  File "train_dreambooth_lora.py", line 1314, in main
+  File "train_dreambooth_lora.py", line 749, in average_weights
+    for key in w_avg.keys():
+  File "/opt/conda/envs/fgl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1269, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'DistributedDataParallel' object has no attribute 'keys'
