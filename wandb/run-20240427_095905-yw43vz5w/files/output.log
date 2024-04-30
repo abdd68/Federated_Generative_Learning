@@ -1,0 +1,358 @@
+04/27/2024 09:59:07 - INFO - __main__ - ***** Running training *****
+04/27/2024 09:59:07 - INFO - __main__ -   Num examples = 5
+04/27/2024 09:59:07 - INFO - __main__ -   Num batches each epoch = 1
+04/27/2024 09:59:07 - INFO - __main__ -   Num Epochs = 500
+04/27/2024 09:59:07 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/27/2024 09:59:07 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 8
+04/27/2024 09:59:07 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/27/2024 09:59:07 - INFO - __main__ -   Total optimization steps = 500
+model_index.json: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 541/541 [00:00<00:00, 272kB/s]
+(…)ature_extractor/preprocessor_config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 342/342 [00:00<00:00, 209kB/s]
+safety_checker/config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.72k/4.72k [00:00<00:00, 2.91MB/s]
+(…)ature_extractor/preprocessor_config.json:   0%|                                                                                                                                                | 0.00/342 [00:00<?, ?B/s]
+Fetching 11 files:  27%|█████████████████████████████████████████████                                                                                                                        | 3/11 [00:00<00:00, 26.58it/s]
+
+
+
+
+
+
+{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.                                                                          | 6/11 [00:15<00:15,  3.13s/it]
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 20.04it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 21.11it/s]
+04/27/2024 09:59:24 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+04/27/2024 09:59:47 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  10%|███████████████▎                                                                                                                                      | 51/500 [01:11<04:39,  1.61it/s, loss=0.00692, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 18.21it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 19.33it/s]
+04/27/2024 10:00:19 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  20%|██████████████████████████████                                                                                                                        | 100/500 [02:05<04:16,  1.56it/s, loss=0.0727, lr=0.0001]04/27/2024 10:01:12 - INFO - accelerate.accelerator - Saving current state to ./output/checkpoint-100
+Model weights saved in output/checkpoint-100/pytorch_lora_weights.safetensors
+04/27/2024 10:01:12 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-100/optimizer.bin
+04/27/2024 10:01:12 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-100/scheduler.bin
+04/27/2024 10:01:12 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-100/sampler.bin
+04/27/2024 10:01:12 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-100/random_states_0.pkl
+04/27/2024 10:01:12 - INFO - __main__ - Saved state to ./output/checkpoint-100
+Steps:  20%|██████████████████████████████▎                                                                                                                       | 101/500 [02:06<04:17,  1.55it/s, loss=0.0105, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 17.29it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 18.46it/s]
+04/27/2024 10:01:13 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  30%|█████████████████████████████████████████████▎                                                                                                        | 151/500 [03:01<03:48,  1.53it/s, loss=0.0596, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 22.32it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 23.34it/s]
+04/27/2024 10:02:08 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  40%|████████████████████████████████████████████████████████████                                                                                          | 200/500 [03:55<03:08,  1.59it/s, loss=0.0161, lr=0.0001]04/27/2024 10:03:02 - INFO - accelerate.accelerator - Saving current state to ./output/checkpoint-200
+Model weights saved in output/checkpoint-200/pytorch_lora_weights.safetensors
+04/27/2024 10:03:02 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-200/optimizer.bin
+04/27/2024 10:03:02 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-200/scheduler.bin
+04/27/2024 10:03:02 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-200/sampler.bin
+04/27/2024 10:03:02 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-200/random_states_0.pkl
+04/27/2024 10:03:02 - INFO - __main__ - Saved state to ./output/checkpoint-200
+Steps:  40%|█████████████████████████████████████████████████████████████                                                                                           | 201/500 [03:55<03:09,  1.58it/s, loss=0.58, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 22.58it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 23.51it/s]
+04/27/2024 10:03:03 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+Potential NSFW content was detected in one or more images. A black image will be returned instead. Try again with a different prompt and/or seed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  50%|███████████████████████████████████████████████████████████████████████████▊                                                                           | 251/500 [04:49<02:35,  1.60it/s, loss=0.222, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 21.96it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 22.92it/s]
+04/27/2024 10:03:57 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  60%|██████████████████████████████████████████████████████████████████████████████████████████                                                            | 300/500 [05:43<02:07,  1.56it/s, loss=0.0352, lr=0.0001]04/27/2024 10:04:50 - INFO - accelerate.accelerator - Saving current state to ./output/checkpoint-300
+Model weights saved in output/checkpoint-300/pytorch_lora_weights.safetensors
+04/27/2024 10:04:50 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-300/optimizer.bin
+04/27/2024 10:04:50 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-300/scheduler.bin
+04/27/2024 10:04:50 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-300/sampler.bin
+04/27/2024 10:04:50 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-300/random_states_0.pkl
+04/27/2024 10:04:50 - INFO - __main__ - Saved state to ./output/checkpoint-300
+Steps:  60%|██████████████████████████████████████████████████████████████████████████████████████████▉                                                            | 301/500 [05:43<02:06,  1.57it/s, loss=0.322, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 22.31it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 23.24it/s]
+04/27/2024 10:04:51 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                            | 351/500 [06:39<01:37,  1.53it/s, loss=0.0113, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 22.73it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 23.72it/s]
+04/27/2024 10:05:47 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                              | 400/500 [07:33<01:02,  1.59it/s, loss=0.146, lr=0.0001]04/27/2024 10:06:40 - INFO - accelerate.accelerator - Saving current state to ./output/checkpoint-400
+Model weights saved in output/checkpoint-400/pytorch_lora_weights.safetensors
+04/27/2024 10:06:40 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-400/optimizer.bin
+04/27/2024 10:06:40 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-400/scheduler.bin
+04/27/2024 10:06:40 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-400/sampler.bin
+04/27/2024 10:06:40 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-400/random_states_0.pkl
+04/27/2024 10:06:40 - INFO - __main__ - Saved state to ./output/checkpoint-400
+Steps:  80%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                             | 401/500 [07:33<01:02,  1.59it/s, loss=0.00183, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 22.52it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 23.55it/s]
+04/27/2024 10:06:41 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎              | 451/500 [08:26<00:28,  1.71it/s, loss=0.0723, lr=0.0001]{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            {'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.█████████████████████████████████████████████████████████████████████████████████████▏                     | 6/7 [00:00<00:00, 22.75it/s]
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 23.76it/s]
+04/27/2024 10:07:34 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [09:19<00:00,  1.65it/s, loss=0.00432, lr=0.0001]04/27/2024 10:08:26 - INFO - accelerate.accelerator - Saving current state to ./output/checkpoint-500
+Model weights saved in output/checkpoint-500/pytorch_lora_weights.safetensors
+04/27/2024 10:08:26 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-500/optimizer.bin
+04/27/2024 10:08:26 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-500/scheduler.bin
+04/27/2024 10:08:26 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-500/sampler.bin
+04/27/2024 10:08:26 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-500/random_states_0.pkl
+04/27/2024 10:08:26 - INFO - __main__ - Saved state to ./output/checkpoint-500
+Steps: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [09:19<00:00,  1.65it/s, loss=0.0606, lr=0.0001]Model weights saved in output/pytorch_lora_weights.safetensors
+{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                            Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of runwayml/stable-diffusion-v1-5.
+{'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.                                                                                        | 0/7 [00:00<?, ?it/s]
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of runwayml/stable-diffusion-v1-5.
+{'time_embedding_dim', 'cross_attention_norm', 'use_linear_projection', 'reverse_transformer_layers_per_block', 'upcast_attention', 'num_attention_heads', 'conv_out_kernel', 'dropout', 'attention_type', 'resnet_time_scale_shift', 'dual_cross_attention', 'addition_embed_type', 'time_embedding_type', 'mid_block_type', 'timestep_post_act', 'resnet_skip_time_act', 'mid_block_only_cross_attention', 'transformer_layers_per_block', 'class_embeddings_concat', 'encoder_hid_dim', 'num_class_embeds', 'addition_time_embed_dim', 'resnet_out_scale_factor', 'conv_in_kernel', 'class_embed_type', 'time_cond_proj_dim', 'projection_class_embeddings_input_dim', 'only_cross_attention', 'addition_embed_type_num_heads', 'encoder_hid_dim_type', 'time_embedding_act_fn'} was not found in config. Values will be initialized to default values.
+Loaded unet as UNet2DConditionModel from `unet` subfolder of runwayml/stable-diffusion-v1-5.
+                                                                                                                                                                                                                            Loaded text_encoder as CLIPTextModel from `text_encoder` subfolder of runwayml/stable-diffusion-v1-5.
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of runwayml/stable-diffusion-v1-5.                                                                          | 3/7 [00:00<00:00, 16.39it/s]
+                                                                                                                                                                                                                            Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of runwayml/stable-diffusion-v1-5.
+{'latents_std', 'force_upcast', 'latents_mean', 'scaling_factor'} was not found in config. Values will be initialized to default values.██████████▎                                           | 5/7 [00:00<00:00, 16.13it/s]
+Loaded vae as AutoencoderKL from `vae` subfolder of runwayml/stable-diffusion-v1-5.
+Loading pipeline components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 14.24it/s]
+Loading unet.ine components...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 13.53it/s]
+04/27/2024 10:08:27 - INFO - __main__ - Running validation...
+ Generating 4 images with prompt: A photo of sks dog in a bucket.
+{'solver_order', 'lambda_min_clipped', 'variance_type', 'dynamic_thresholding_ratio', 'sample_max_value', 'use_karras_sigmas', 'timestep_spacing', 'solver_type', 'thresholding', 'final_sigmas_type', 'use_lu_lambdas', 'lower_order_final', 'rescale_betas_zero_snr', 'prediction_type', 'algorithm_type', 'euler_at_final'} was not found in config. Values will be initialized to default values.
+scheduler.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 563/563 [00:00<00:00, 6.02kB/s]
+random_states_0.pkl: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21.7k/21.7k [00:00<00:00, 195kB/s]
+random_states_0.pkl: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21.7k/21.7k [00:00<00:00, 292kB/s]
+pytorch_lora_weights.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.23M/3.23M [00:00<00:00, 11.0MB/s]
+optimizer.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6.59M/6.59M [00:00<00:00, 16.0MB/s]
+pytorch_lora_weights.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.23M/3.23M [00:00<00:00, 13.5MB/s]
+scheduler.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 563/563 [00:00<00:00, 7.60kB/s]
+optimizer.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6.59M/6.59M [00:00<00:00, 12.3MB/s]
+scheduler.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 563/563 [00:00<00:00, 9.57kB/s]
+random_states_0.pkl: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21.7k/21.7k [00:00<00:00, 284kB/s]
+pytorch_lora_weights.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.23M/3.23M [00:00<00:00, 15.0MB/s]
+optimizer.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6.59M/6.59M [00:00<00:00, 19.0MB/s]
+random_states_0.pkl: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21.7k/21.7k [00:00<00:00, 253kB/s]
+scheduler.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 563/563 [00:00<00:00, 11.4kB/s]
+pytorch_lora_weights.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.23M/3.23M [00:00<00:00, 13.3MB/s]
+optimizer.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6.59M/6.59M [00:00<00:00, 22.8MB/s]
+scheduler.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 563/563 [00:00<00:00, 8.27kB/s]
+random_states_0.pkl: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21.7k/21.7k [00:00<00:00, 150kB/s]
+pytorch_lora_weights.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.23M/3.23M [00:00<00:00, 15.8MB/s]
+pytorch_lora_weights.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.23M/3.23M [00:00<00:00, 22.4MB/s]
+optimizer.bin: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6.59M/6.59M [00:00<00:00, 19.2MB/s]
+Upload 21 LFS files: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21/21 [00:01<00:00, 17.79it/s]
+Upload 21 LFS files:  81%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                              | 17/21 [00:01<00:00, 16.82it/s]

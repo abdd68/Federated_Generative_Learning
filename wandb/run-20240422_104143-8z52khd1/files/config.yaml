@@ -1,0 +1,127 @@
+wandb_version: 1
+
+com_round:
+  desc: null
+  value: 5
+local_ep:
+  desc: null
+  value: 1
+sever_ep:
+  desc: null
+  value: null
+batch_size:
+  desc: null
+  value: 128
+lr:
+  desc: null
+  value: 0.01
+momentum:
+  desc: null
+  value: 0.9
+weight_decay:
+  desc: null
+  value: 0.0001
+num_workers:
+  desc: null
+  value: 4
+num_users:
+  desc: null
+  value: 5
+frac:
+  desc: null
+  value: 1
+domains:
+  desc: null
+  value:
+  - clipart
+  - infograph
+  - painting
+  - quickdraw
+  - real
+  - sketch
+data_type:
+  desc: null
+  value: imagenette
+data_path_train:
+  desc: null
+  value: /codespace/imagenet1000/train
+data_path_test:
+  desc: null
+  value: /codespace/imagenet1000/val
+data_path_server:
+  desc: null
+  value: null
+sample_data_nums:
+  desc: null
+  value: null
+labels:
+  desc: null
+  value:
+  - 1
+  - 73
+  - 11
+  - 19
+  - 29
+  - 31
+  - 290
+  - 121
+  - 225
+  - 39
+partition:
+  desc: null
+  value: dirichlet
+beta:
+  desc: null
+  value: 0.1
+net:
+  desc: null
+  value: holocron_resnet18
+net_path:
+  desc: null
+  value: null
+seed:
+  desc: null
+  value: 2021
+wandb:
+  desc: null
+  value: 1
+exp_name:
+  desc: null
+  value: hello-world
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.0
+    cli_version: 0.16.6
+    framework: huggingface
+    huggingface_version: 4.39.3
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1713796903.0
+    t:
+      1:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      - 71
+      - 83
+      2:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      - 71
+      - 83
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.8.0
+      5: 0.16.6
+      6: 4.39.3
+      8:
+      - 5
+      13: linux-x86_64

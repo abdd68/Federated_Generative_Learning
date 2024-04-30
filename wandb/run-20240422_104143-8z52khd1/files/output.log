@@ -1,0 +1,21 @@
+loading raw imagenet1000 train dataset from /codespace/imagenet1000/train
+loading raw imagenet1000 test dataset from /codespace/imagenet1000/val
+Data statistics: {0: {0: 568, 1: 720, 3: 340, 4: 877, 5: 881, 2: 0, 6: 0, 7: 0, 8: 0, 9: 0}, 1: {0: 547, 1: 546, 3: 3, 5: 2, 7: 5, 8: 1, 9: 65, 2: 0, 4: 0, 6: 0}, 2: {0: 170, 4: 15, 5: 20, 6: 526, 7: 1220, 8: 1105, 1: 0, 2: 0, 3: 0, 9: 0}, 3: {0: 4, 1: 24, 2: 1294, 3: 1, 4: 404, 5: 368, 6: 180, 7: 73, 8: 193, 9: 1234}, 4: {0: 11, 1: 10, 2: 6, 3: 850, 4: 4, 5: 29, 6: 594, 7: 2, 8: 1, 9: 1}}
+==> Building model from holocron_resnet18..
+Random initialization of model weights.
+  0%|                                                                                                                                         | 0/5 [00:00<?, ?it/s]
+
+ [==============================================================>..]  Step: 67ms | Tot: 3s311ms | Train_Loss: 1.447 | Acc: 54.570% (2060/3775) 30/30
+ [==============================================================>..]  Step: 67ms | Tot: 3s124ms | Train_Loss: 1.490 | Acc: 38.275% (1296/3386) 27/27
+ [===========================================================>.....]  Step: 98ms | Tot: 1s328ms | Train_Loss: 1.208 | Acc: 55.769% (841/1508) 12/12
+ [==========================================================>......]  Step: 55ms | Tot: 1s44ms | Train_Loss: 1.230 | Acc: 48.589% (568/1169) 10/10
+
+  0%|                                                                                                                                         | 0/5 [00:14<?, ?it/s]
+Traceback (most recent call last):
+  File "multi_round.py", line 157, in <module>
+    w = local_update(copy.deepcopy(global_model), trainloader, n_epochs=args.local_ep, lr=args.lr,
+  File "/codespace/Federated_Generative_Learning/helper/utils.py", line 177, in local_update
+    train(model, trainloader, optimizer, if_log=if_log)
+  File "/codespace/Federated_Generative_Learning/helper/utils.py", line 132, in train
+    inputs, targets = inputs.to('cuda'), targets.to('cuda')
+KeyboardInterrupt

@@ -1,0 +1,27 @@
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Configure stats pid to 2680524
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Loading settings from /codespace/Federated_Generative_Learning/wandb/settings
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'multi_round.py', 'program_abspath': '/codespace/Federated_Generative_Learning/multi_round.py', 'program': 'multi_round.py'}
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_init.py:_log_setup():521] Logging user logs to /codespace/Federated_Generative_Learning/wandb/run-20240422_104143-8z52khd1/logs/debug.log
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_init.py:_log_setup():522] Logging internal logs to /codespace/Federated_Generative_Learning/wandb/run-20240422_104143-8z52khd1/logs/debug-internal.log
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_init.py:init():561] calling init triggers
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {'com_round': 5, 'local_ep': 1, 'sever_ep': None, 'batch_size': 128, 'lr': 0.01, 'momentum': 0.9, 'weight_decay': 0.0001, 'num_workers': 4, 'num_users': 5, 'frac': 1, 'domains': ['clipart', 'infograph', 'painting', 'quickdraw', 'real', 'sketch'], 'data_type': 'imagenette', 'data_path_train': '/codespace/imagenet1000/train', 'data_path_test': '/codespace/imagenet1000/val', 'data_path_server': None, 'sample_data_nums': None, 'labels': [1, 73, 11, 19, 29, 31, 290, 121, 225, 39], 'partition': 'dirichlet', 'beta': 0.1, 'net': 'holocron_resnet18', 'net_path': None, 'seed': 2021, 'wandb': 1, 'exp_name': 'hello-world'}
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_init.py:init():611] starting backend
+2024-04-22 10:41:43,792 INFO    MainThread:2680524 [wandb_init.py:init():615] setting up manager
+2024-04-22 10:41:43,794 INFO    MainThread:2680524 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-04-22 10:41:43,795 INFO    MainThread:2680524 [wandb_init.py:init():623] backend started and connected
+2024-04-22 10:41:43,798 INFO    MainThread:2680524 [wandb_init.py:init():715] updated telemetry
+2024-04-22 10:41:43,819 INFO    MainThread:2680524 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2024-04-22 10:41:44,103 INFO    MainThread:2680524 [wandb_run.py:_on_init():2357] communicating current version
+2024-04-22 10:41:45,184 INFO    MainThread:2680524 [wandb_run.py:_on_init():2366] got version response 
+2024-04-22 10:41:45,185 INFO    MainThread:2680524 [wandb_init.py:init():799] starting run threads in backend
+2024-04-22 10:41:46,719 INFO    MainThread:2680524 [wandb_run.py:_console_start():2335] atexit reg
+2024-04-22 10:41:46,719 INFO    MainThread:2680524 [wandb_run.py:_redirect():2190] redirect: wrap_raw
+2024-04-22 10:41:46,719 INFO    MainThread:2680524 [wandb_run.py:_redirect():2255] Wrapping output streams.
+2024-04-22 10:41:46,719 INFO    MainThread:2680524 [wandb_run.py:_redirect():2280] Redirects installed.
+2024-04-22 10:41:46,720 INFO    MainThread:2680524 [wandb_init.py:init():842] run started, returning control to user process

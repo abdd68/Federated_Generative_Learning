@@ -105,7 +105,7 @@ def args_parser():
                             'then the partition is more unbalanced')
     # model settings
     parser.add_argument('--net', type=str, 
-                        choices=['holocron_resnet18', 'holocron_resnet34', "holocron_resnet50", "resnet50"],
+                        choices=['holocron_resnet18', 'holocron_resnet34', "holocron_resnet50", "resnet50", 'stable_diffusion'],
                         default="holocron_resnet18",
                         help='model name to train')
     parser.add_argument('--net_path', type=str, default=None,
@@ -139,15 +139,16 @@ if __name__ == '__main__':
     if args.data_type == 'domainnet':
         bst_acc_domain = dict()
     bst_acc = -1
-    global_model.train()
+    global_model.train() if not ("stable_diffusion" in args.net) else None
 
     # =========== Federated Learning ===============
     for com in tqdm(range(args.com_round)):
         local_weights = []
         if args.data_type == 'domainnet':
-            for domain in args.domains:
-                w = local_update(copy.deepcopy(global_model), train_dataset[domain], n_epochs=args.local_ep, lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay, if_log=True)
-                local_weights.append(copy.deepcopy(w))
+            # for domain in args.domains:
+            #     w = local_update(copy.deepcopy(global_model), train_dataset[domain], n_epochs=args.local_ep, lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay, if_log=True)
+            #     local_weights.append(copy.deepcopy(w))
+            pass
         elif "image" in args.data_type:
             m = max(int(args.frac * args.num_users), 1)
             idxs_users = np.random.choice(range(args.num_users), m, replace=False)
