@@ -1,0 +1,139 @@
+04/30/2024 06:09:52 - INFO - __main__ - ***** Running training *****
+04/30/2024 06:09:52 - INFO - __main__ -   Num examples = 5
+04/30/2024 06:09:52 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:09:52 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:09:52 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:09:52 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:09:52 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:09:52 - INFO - __main__ -   Total optimization steps = 500
+                                                                                                                                                          04/30/2024 06:09:53 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<06:48,  1.22it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model weights saved in output/checkpoint-100/pytorch_lora_weights.safetensors                                           | 100/500 [00:28<01:51,  3.59it/s]
+04/30/2024 06:10:21 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-100/optimizer.bin
+04/30/2024 06:10:21 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-100/scheduler.bin
+04/30/2024 06:10:21 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-100/sampler.bin
+04/30/2024 06:10:21 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-100/random_states_0.pkl
+04/30/2024 06:10:21 - INFO - __main__ - Saved state to ./output/checkpoint-100
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model weights saved in output/checkpoint-200/pytorch_lora_weights.safetensors                                           | 200/500 [00:56<01:26,  3.45it/s]
+04/30/2024 06:10:49 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-200/optimizer.bin
+04/30/2024 06:10:49 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-200/scheduler.bin
+04/30/2024 06:10:49 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-200/sampler.bin
+04/30/2024 06:10:49 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-200/random_states_0.pkl
+04/30/2024 06:10:49 - INFO - __main__ - Saved state to ./output/checkpoint-200
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model weights saved in output/checkpoint-300/pytorch_lora_weights.safetensors                                           | 300/500 [01:25<00:58,  3.41it/s]
+04/30/2024 06:11:18 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-300/optimizer.bin
+04/30/2024 06:11:18 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-300/scheduler.bin
+04/30/2024 06:11:18 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-300/sampler.bin
+04/30/2024 06:11:18 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-300/random_states_0.pkl
+04/30/2024 06:11:18 - INFO - __main__ - Saved state to ./output/checkpoint-300
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model weights saved in output/checkpoint-400/pytorch_lora_weights.safetensors█████████████████████▍                     | 400/500 [01:54<00:28,  3.55it/s]
+04/30/2024 06:11:47 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-400/optimizer.bin
+04/30/2024 06:11:47 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-400/scheduler.bin
+04/30/2024 06:11:47 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-400/sampler.bin
+04/30/2024 06:11:47 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-400/random_states_0.pkl
+04/30/2024 06:11:47 - INFO - __main__ - Saved state to ./output/checkpoint-400
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model weights saved in output/checkpoint-500/pytorch_lora_weights.safetensors███████████████████████████████████████████| 500/500 [02:23<00:00,  3.39it/s]
+04/30/2024 06:12:16 - INFO - accelerate.checkpointing - Optimizer state saved in output/checkpoint-500/optimizer.bin
+04/30/2024 06:12:16 - INFO - accelerate.checkpointing - Scheduler state saved in output/checkpoint-500/scheduler.bin
+04/30/2024 06:12:16 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in output/checkpoint-500/sampler.bin
+04/30/2024 06:12:16 - INFO - accelerate.checkpointing - Random states saved in output/checkpoint-500/random_states_0.pkl
+04/30/2024 06:12:16 - INFO - __main__ - Saved state to ./output/checkpoint-500
+04/30/2024 06:12:16 - INFO - __main__ - ***** Running training *****
+04/30/2024 06:12:16 - INFO - __main__ -   Num examples = 5
+04/30/2024 06:12:16 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:12:16 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:12:16 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:12:16 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:12:16 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:12:16 - INFO - __main__ -   Total optimization steps = 500
+Steps: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [02:23<00:00,  3.47it/s]
+04/30/2024 06:12:17 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.                 | 0/500 [00:00<?, ?it/s]
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:36,  3.19it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  File "train_dreambooth_lora.py", line 1441, in <module>                                                               | 100/500 [00:31<02:07,  3.14it/s]
+    main(args)
+  File "train_dreambooth_lora.py", line 1335, in main
+    accelerator.save_state(save_path)
+  File "/opt/conda/envs/fgl/lib/python3.8/site-packages/accelerate/accelerator.py", line 2823, in save_state
+    hook(self._models, weights, output_dir)
+  File "train_dreambooth_lora.py", line 979, in save_model_hook
+    raise ValueError(f"unexpected save model: {model.__class__}")
+ValueError: unexpected save model: <class 'torch.nn.parallel.distributed.DistributedDataParallel'>

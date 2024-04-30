@@ -1,0 +1,14 @@
+04/30/2024 02:53:02 - INFO - __main__ - ***** Running training *****
+04/30/2024 02:53:02 - INFO - __main__ -   Num examples = 12894
+04/30/2024 02:53:02 - INFO - __main__ -   Num batches each epoch = 714
+04/30/2024 02:53:02 - INFO - __main__ -   Num Epochs = 1
+04/30/2024 02:53:02 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 02:53:02 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 4
+04/30/2024 02:53:02 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 02:53:02 - INFO - __main__ -   Total optimization steps = 500
+                                                                                                                                                         Traceback (most recent call last):
+  File "train_dreambooth_lora.py", line 1420, in <module>                                                                        | 0/500 [00:00<?, ?it/s]
+    main(args)
+  File "train_dreambooth_lora.py", line 1199, in main
+    pixel_values = batch["pixel_values"].to(dtype=weight_dtype)
+TypeError: list indices must be integers or slices, not str

@@ -1,0 +1,39 @@
+04/30/2024 06:06:12 - INFO - __main__ - ***** Running training *****
+04/30/2024 06:06:12 - INFO - __main__ -   Num examples = 5
+04/30/2024 06:06:12 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:06:12 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:06:12 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:06:12 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:06:12 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:06:12 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+> /codespace/Federated_Generative_Learning/train_dreambooth_lora.py(1305)main()
+-> optimizer.zero_grad()
+True
+> /codespace/Federated_Generative_Learning/train_dreambooth_lora.py(1309)main()
+-> if accelerator.sync_gradients:
+> /codespace/Federated_Generative_Learning/train_dreambooth_lora.py(1310)main()
+
+Steps:   0%|▏                                                                                                           | 1/500 [00:23<3:18:41, 23.89s/it]
+> /codespace/Federated_Generative_Learning/train_dreambooth_lora.py(1311)main()
+-> global_step += 1
+04/30/2024 06:06:59 - INFO - __main__ -   Num examples = 5                                                              | 1/500 [00:23<3:18:41, 23.89s/it]
+04/30/2024 06:06:59 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:06:59 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:06:59 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:06:59 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:06:59 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:06:59 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                           | 1/500 [00:47<6:34:05, 47.39s/it]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+> /codespace/Federated_Generative_Learning/train_dreambooth_lora.py(1304)main()
+  File "train_dreambooth_lora.py", line 1442, in <module>                                                                         | 0/500 [00:00<?, ?it/s]
+  File "train_dreambooth_lora.py", line 1304, in main
+    optimizer.zero_grad()
+  File "train_dreambooth_lora.py", line 1304, in main
+    optimizer.zero_grad()
+  File "/opt/conda/envs/fgl/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/conda/envs/fgl/lib/python3.8/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

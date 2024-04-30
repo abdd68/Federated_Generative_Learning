@@ -1,0 +1,58 @@
+04/30/2024 06:23:44 - INFO - __main__ - ***** Running training *****
+04/30/2024 06:23:44 - INFO - __main__ -   Num examples = 5
+04/30/2024 06:23:44 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:23:44 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:23:44 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:23:44 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:23:44 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:23:44 - INFO - __main__ -   Total optimization steps = 500
+                                                                                                                                                          04/30/2024 06:23:45 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<06:40,  1.25it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

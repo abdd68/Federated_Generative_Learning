@@ -1122,8 +1122,23 @@ def main(args):
         num_classes = 1000
     else:
         num_classes = 10
-    train_dataset, test_dataset, user_groups, traindata_cls_counts = partition_data(args.data_type, args.partition, 
-                beta=args.beta, num_users=args.num_users, train_dir=args.data_path_train, test_dir=args.data_path_test)
+    # train_dataset, test_dataset, user_groups, traindata_cls_counts = partition_data(args.data_type, args.partition, 
+    #             beta=args.beta, num_users=args.num_users, train_dir=args.data_path_train, test_dir=args.data_path_test)
+    train_dataset = DreamBoothDataset(
+        instance_data_root=args.instance_data_dir,
+        instance_prompt=args.instance_prompt,
+        class_data_root=args.class_data_dir if args.with_prior_preservation else None,
+        class_prompt=args.class_prompt,
+        class_num=args.num_class_images,
+        tokenizer=tokenizer,
+        size=args.resolution,
+        center_crop=args.center_crop,
+        encoder_hidden_states=pre_computed_encoder_hidden_states,
+        class_prompt_encoder_hidden_states=pre_computed_class_prompt_encoder_hidden_states,
+        tokenizer_max_length=args.tokenizer_max_length,
+    )
+    train_dataset = torch.utils.data.random_split(train_dataset, [len(train_dataset)//args.num_users for i in range(args.num_users)])
+
     lr_scheduler = get_scheduler(
                 args.lr_scheduler,
                 optimizer=optimizer,
@@ -1139,8 +1154,13 @@ def main(args):
         m = max(int(args.frac * args.num_users), 1)
         idxs_users = np.random.choice(range(args.num_users), m, replace=False)
         for idx in idxs_users:
-            train_dataloader = torch.utils.data.DataLoader(DatasetSplit(train_dataset, user_groups[idx]),
-                                        batch_size=args.train_batch_size, shuffle=True, num_workers=args.num_workers)
+            train_dataloader = torch.utils.data.DataLoader(
+                train_dataset[idx],
+                batch_size=args.train_batch_size,
+                shuffle=True,
+                collate_fn=lambda examples: collate_fn(examples, args.with_prior_preservation),
+                num_workers=args.dataloader_num_workers,
+            )
             # Prepare everything with our `accelerator`.
             if args.train_text_encoder:
                 unet, text_encoder, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
@@ -1155,46 +1175,46 @@ def main(args):
             unet.train()
             if args.train_text_encoder:
                 text_encoder.train()
+            
+            # Scheduler and math around the number of training steps.
+            overrode_max_train_steps = False
+            num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
+            if args.max_train_steps is None:
+                args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
+                overrode_max_train_steps = True
+
+
+            # We need to recalculate our total training steps as the size of the training dataloader may have changed.
+            num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
+            if overrode_max_train_steps:
+                args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
+            # Afterwards we recalculate our number of training epochs
+            args.num_train_epochs = math.ceil(args.max_train_steps / num_update_steps_per_epoch)
+
+            # We need to initialize the trackers we use, and also store our configuration.
+            # The trackers initializes automatically on the main process.
+            if accelerator.is_main_process:
+                tracker_config = vars(copy.deepcopy(args))
+                tracker_config.pop("validation_images")
+                accelerator.init_trackers("dreambooth-lora", config=tracker_config)
+
+            # Train!
+            total_batch_size = args.train_batch_size * accelerator.num_processes * args.gradient_accumulation_steps
+
+            logger.info("***** Running training *****")
+            logger.info(f"  Num examples = {len(train_dataset)}")
+            logger.info(f"  Num batches each epoch = {len(train_dataloader)}")
+            logger.info(f"  Num Epochs = {args.num_train_epochs}")
+            logger.info(f"  Instantaneous batch size per device = {args.train_batch_size}")
+            logger.info(f"  Total train batch size (w. parallel, distributed & accumulation) = {total_batch_size}")
+            logger.info(f"  Gradient Accumulation steps = {args.gradient_accumulation_steps}")
+            logger.info(f"  Total optimization steps = {args.max_train_steps}")
+            global_step, first_epoch, initial_global_step  = 0, 0, 0
+
+            progress_bar = tqdm(range(0, args.max_train_steps), initial=initial_global_step, desc="Steps", disable=not accelerator.is_local_main_process)
+            
             for epoch in range(0, args.num_train_epochs):
-                # Scheduler and math around the number of training steps.
-                overrode_max_train_steps = False
-                num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
-                if args.max_train_steps is None:
-                    args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
-                    overrode_max_train_steps = True
-
-
-                # We need to recalculate our total training steps as the size of the training dataloader may have changed.
-                num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
-                if overrode_max_train_steps:
-                    args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
-                # Afterwards we recalculate our number of training epochs
-                args.num_train_epochs = math.ceil(args.max_train_steps / num_update_steps_per_epoch)
-
-                # We need to initialize the trackers we use, and also store our configuration.
-                # The trackers initializes automatically on the main process.
-                if accelerator.is_main_process:
-                    tracker_config = vars(copy.deepcopy(args))
-                    tracker_config.pop("validation_images")
-                    accelerator.init_trackers("dreambooth-lora", config=tracker_config)
-
-                # Train!
-                total_batch_size = args.train_batch_size * accelerator.num_processes * args.gradient_accumulation_steps
-
-                logger.info("***** Running training *****")
-                logger.info(f"  Num examples = {len(train_dataset)}")
-                logger.info(f"  Num batches each epoch = {len(train_dataloader)}")
-                logger.info(f"  Num Epochs = {args.num_train_epochs}")
-                logger.info(f"  Instantaneous batch size per device = {args.train_batch_size}")
-                logger.info(f"  Total train batch size (w. parallel, distributed & accumulation) = {total_batch_size}")
-                logger.info(f"  Gradient Accumulation steps = {args.gradient_accumulation_steps}")
-                logger.info(f"  Total optimization steps = {args.max_train_steps}")
-                global_step, first_epoch, initial_global_step  = 0, 0, 0
-
-                progress_bar = tqdm(range(0, args.max_train_steps), initial=initial_global_step, desc="Steps", disable=not accelerator.is_local_main_process)
-                
-                    
-                for step, batch in enumerate(train_dataloader): # >>> begins
+                for step, batch in enumerate(train_dataloader): # >>> begins 
                     with accelerator.accumulate(unet):
                         pixel_values = batch["pixel_values"].to(dtype=weight_dtype)
 
@@ -1282,41 +1302,41 @@ def main(args):
                         optimizer.step()
                         lr_scheduler.step()
                         optimizer.zero_grad()
+                        
 
                     # Checks if the accelerator has performed an optimization step behind the scenes
                     if accelerator.sync_gradients:
                         progress_bar.update(1)
                         global_step += 1
-
-                        if accelerator.is_main_process:
-                            if global_step % args.checkpointing_steps == 0:
-                                # _before_ saving state, check if this save would set us over the `checkpoints_total_limit`
-                                if args.checkpoints_total_limit is not None:
-                                    checkpoints = os.listdir(args.output_dir)
-                                    checkpoints = [d for d in checkpoints if d.startswith("checkpoint")]
-                                    checkpoints = sorted(checkpoints, key=lambda x: int(x.split("-")[1]))
-
-                                    # before we save the new checkpoint, we need to have at _most_ `checkpoints_total_limit - 1` checkpoints
-                                    if len(checkpoints) >= args.checkpoints_total_limit:
-                                        num_to_remove = len(checkpoints) - args.checkpoints_total_limit + 1
-                                        removing_checkpoints = checkpoints[0:num_to_remove]
-
-                                        logger.info(
-                                            f"{len(checkpoints)} checkpoints already exist, removing {len(removing_checkpoints)} checkpoints"
-                                        )
-                                        logger.info(f"removing checkpoints: {', '.join(removing_checkpoints)}")
-
-                                        for removing_checkpoint in removing_checkpoints:
-                                            removing_checkpoint = os.path.join(args.output_dir, removing_checkpoint)
-                                            shutil.rmtree(removing_checkpoint)
-
-                                save_path = os.path.join(args.output_dir, f"checkpoint-{global_step}")
-                                accelerator.save_state(save_path)
-                                logger.info(f"Saved state to {save_path}")
                     
             local_weights.append(copy.deepcopy(unet))  # >>> ends
         
         unet = average_weights(local_weights)
+
+        if accelerator.is_main_process:
+            # _before_ saving state, check if this save would set us over the `checkpoints_total_limit`
+            if args.checkpoints_total_limit is not None:
+                checkpoints = os.listdir(args.output_dir)
+                checkpoints = [d for d in checkpoints if d.startswith("checkpoint")]
+                checkpoints = sorted(checkpoints, key=lambda x: int(x.split("-")[1]))
+
+                # before we save the new checkpoint, we need to have at _most_ `checkpoints_total_limit - 1` checkpoints
+                if len(checkpoints) >= args.checkpoints_total_limit:
+                    num_to_remove = len(checkpoints) - args.checkpoints_total_limit + 1
+                    removing_checkpoints = checkpoints[0:num_to_remove]
+
+                    logger.info(
+                        f"{len(checkpoints)} checkpoints already exist, removing {len(removing_checkpoints)} checkpoints"
+                    )
+                    logger.info(f"removing checkpoints: {', '.join(removing_checkpoints)}")
+
+                    for removing_checkpoint in removing_checkpoints:
+                        removing_checkpoint = os.path.join(args.output_dir, removing_checkpoint)
+                        shutil.rmtree(removing_checkpoint)
+
+            save_path = os.path.join(args.output_dir, f"checkpoint-{global_step}")
+            accelerator.save_state(save_path)
+            logger.info(f"Saved state to {save_path}")
         # FL ends
         logs = {"loss": loss.detach().item(), "lr": lr_scheduler.get_last_lr()[0]}
         progress_bar.set_postfix(**logs)

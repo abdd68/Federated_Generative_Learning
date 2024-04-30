@@ -1,0 +1,482 @@
+04/30/2024 05:52:24 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:24 - INFO - __main__ -   Num examples = 5
+04/30/2024 05:52:24 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:24 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:24 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:24 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:24 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:24 - INFO - __main__ -   Total optimization steps = 500
+                                                                                                                                                          04/30/2024 05:52:26 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:26 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:01<10:20,  1.24s/it]
+04/30/2024 05:52:26 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:26 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:01<13:46,  1.66s/it]
+04/30/2024 05:52:26 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:26 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:32,  3.27it/s]
+04/30/2024 05:52:26 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:26 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:38,  3.14it/s]
+04/30/2024 05:52:26 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.                 | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:26 - INFO - torch.nn.parallel.distributed - Reducer buckets have been rebuilt in this iteration.
+                                                                                                                                                          04/30/2024 05:52:26 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:26 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:36,  3.18it/s]
+04/30/2024 05:52:26 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:26 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:26 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:42,  3.06it/s]
+                                                                                                                                                          04/30/2024 05:52:27 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:27 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:27 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:31,  3.30it/s]
+04/30/2024 05:52:27 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:27 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:37,  3.17it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:27 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:27 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:37,  3.16it/s]
+04/30/2024 05:52:27 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:27 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:44,  3.03it/s]
+                                                                                                                                                          04/30/2024 05:52:27 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:27 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:27 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:35,  3.20it/s]
+04/30/2024 05:52:27 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:27 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:27 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:43,  3.06it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:28 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:28 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:31,  3.30it/s]
+04/30/2024 05:52:28 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:28 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:38,  3.14it/s]
+04/30/2024 05:52:28 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:28 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:32,  3.27it/s]
+04/30/2024 05:52:28 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:28 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:41,  3.08it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:28 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:28 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:27,  3.37it/s]
+04/30/2024 05:52:28 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:28 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:28 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:36,  3.18it/s]
+                                                                                                                                                          04/30/2024 05:52:29 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:29 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:29 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:33,  3.26it/s]
+04/30/2024 05:52:29 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:29 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:43,  3.06it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:29 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:29 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:29,  3.35it/s]
+04/30/2024 05:52:29 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:29 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:40,  3.12it/s]
+                                                                                                                                                          04/30/2024 05:52:29 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:29 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:29 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:31,  3.30it/s]
+04/30/2024 05:52:29 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:29 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:29 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:42,  3.07it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:30 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:30 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:33,  3.25it/s]
+04/30/2024 05:52:30 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:30 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:44,  3.03it/s]
+04/30/2024 05:52:31 - INFO - __main__ -   Num Epochs = 500                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:30 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:28,  3.37it/s]
+04/30/2024 05:52:30 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:30 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:41,  3.09it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:30 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:30 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:31,  3.30it/s]
+04/30/2024 05:52:30 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:30 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:30 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:43,  3.06it/s]
+                                                                                                                                                          04/30/2024 05:52:31 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:31 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:31 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:34,  3.23it/s]
+04/30/2024 05:52:31 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:31 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:48,  2.96it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:31 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:31 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:26,  3.41it/s]
+04/30/2024 05:52:31 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Num Epochs = 500                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:31 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:41,  3.09it/s]
+                                                                                                                                                          04/30/2024 05:52:31 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:31 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:31 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:28,  3.37it/s]
+04/30/2024 05:52:31 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:31 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:31 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:42,  3.07it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:32 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:32 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:33,  3.25it/s]
+04/30/2024 05:52:32 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:32 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:49,  2.95it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:32 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:34,  3.23it/s]
+04/30/2024 05:52:32 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:32 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:51,  2.91it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:32 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:32 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:30,  3.31it/s]
+04/30/2024 05:52:32 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:32 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:32 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:48,  2.96it/s]
+                                                                                                                                                          04/30/2024 05:52:33 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:33 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:33 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:29,  3.35it/s]
+04/30/2024 05:52:33 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:33 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:47,  2.98it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:33 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:33 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:26,  3.40it/s]
+04/30/2024 05:52:33 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:33 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:45,  3.02it/s]
+                                                                                                                                                          04/30/2024 05:52:33 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:33 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:33 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:39,  3.13it/s]
+04/30/2024 05:52:33 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:33 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:33 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:57,  2.80it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:34 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:34 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:32,  3.27it/s]
+04/30/2024 05:52:34 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:34 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:51,  2.91it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:34 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:34,  3.24it/s]
+04/30/2024 05:52:34 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:34 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:56,  2.83it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:34 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:34 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:32,  3.27it/s]
+04/30/2024 05:52:34 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:34 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:34 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:52,  2.89it/s]
+                                                                                                                                                          04/30/2024 05:52:35 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:35 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:35 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:36,  3.19it/s]
+04/30/2024 05:52:35 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:35 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:35 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:35 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:35 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:57,  2.81it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:35 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:35 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:33,  3.25it/s]
+04/30/2024 05:52:35 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:35 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:35 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:35 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:35 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:35 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:57,  2.81it/s]
+                                                                                                                                                          04/30/2024 05:52:36 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:36 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:36 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:38,  3.14it/s]
+04/30/2024 05:52:36 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:36 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:01,  2.75it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:36 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:36 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:26,  3.40it/s]
+04/30/2024 05:52:36 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:36 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:52,  2.90it/s]
+04/30/2024 05:52:36 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:36 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:33,  3.24it/s]
+04/30/2024 05:52:36 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:36 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:36 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:00,  2.77it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:37 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:37 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:29,  3.35it/s]
+04/30/2024 05:52:37 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:37 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:53,  2.88it/s]
+                                                                                                                                                          04/30/2024 05:52:37 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:37 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:37 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:29,  3.34it/s]
+04/30/2024 05:52:37 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:37 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:57,  2.81it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:37 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:37 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:27,  3.38it/s]
+04/30/2024 05:52:37 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:37 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:37 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:54,  2.85it/s]
+                                                                                                                                                          04/30/2024 05:52:38 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:38 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:38 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:31,  3.29it/s]
+04/30/2024 05:52:38 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:38 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:38 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:38 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:38 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:59,  2.78it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:35,  3.22it/s]
+04/30/2024 05:52:38 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:38 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:34,  3.22it/s]
+04/30/2024 05:52:38 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:38 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:38 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:38 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:38 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:04,  2.71it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:39 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:39 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:33,  3.26it/s]
+04/30/2024 05:52:39 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:39 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:02,  2.74it/s]
+                                                                                                                                                          04/30/2024 05:52:39 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:39 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:39 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:28,  3.37it/s]
+04/30/2024 05:52:39 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:39 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:59,  2.77it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:39 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:39 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:32,  3.27it/s]
+04/30/2024 05:52:39 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:39 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:39 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:04,  2.71it/s]
+                                                                                                                                                          04/30/2024 05:52:40 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:40 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:40 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:34,  3.24it/s]
+04/30/2024 05:52:40 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:40 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:40 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:40 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:40 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:05,  2.68it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:41 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:41 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:29,  3.35it/s]
+04/30/2024 05:52:41 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:41 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:02,  2.73it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:41 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:41 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:33,  3.26it/s]
+04/30/2024 05:52:41 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:41 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:08,  2.64it/s]
+                                                                                                                                                          04/30/2024 05:52:41 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:41 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:41 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:33,  3.25it/s]
+04/30/2024 05:52:41 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:41 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:41 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:11,  2.60it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:42 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:42 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:34,  3.22it/s]
+04/30/2024 05:52:42 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:42 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:42 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:42 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:42 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:42 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:13,  2.58it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:35,  3.20it/s]
+04/30/2024 05:52:43 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:43 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:31,  3.30it/s]
+04/30/2024 05:52:43 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:43 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:43 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:43 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:43 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:09,  2.63it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:43 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:43 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:32,  3.26it/s]
+04/30/2024 05:52:43 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:43 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:43 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:43 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:43 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:43 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:12,  2.59it/s]
+                                                                                                                                                          04/30/2024 05:52:44 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:44 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:44 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:35,  3.21it/s]
+04/30/2024 05:52:44 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:44 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:44 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:44 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:44 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:15,  2.56it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:37,  3.17it/s]
+04/30/2024 05:52:45 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:45 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:39,  3.13it/s]
+04/30/2024 05:52:45 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:45 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:45 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:45 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:45 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:28,  2.39it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]04/30/2024 05:52:46 - INFO - __main__ - ***** Running training *****
+04/30/2024 05:52:46 - INFO - __main__ -   Num examples = 5                                                                | 1/500 [00:00<02:41,  3.08it/s]
+04/30/2024 05:52:46 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 05:52:46 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:46 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:46 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:46 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:46 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:32,  2.35it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<02:38,  3.15it/s]
+04/30/2024 05:52:48 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:48 - INFO - __main__ -   Num batches each epoch = 1                                                      | 1/500 [00:00<02:35,  3.21it/s]
+04/30/2024 05:52:48 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 05:52:48 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 05:52:48 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 05:52:48 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 05:52:48 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|▏                                                                                                             | 1/500 [00:00<03:26,  2.42it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:50 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:53 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]
+04/30/2024 05:52:56 - INFO - __main__ -   Num examples = 5                                                                        | 0/500 [00:00<?, ?it/s]

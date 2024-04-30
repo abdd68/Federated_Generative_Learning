@@ -1,0 +1,27 @@
+04/30/2024 06:04:50 - INFO - __main__ - ***** Running training *****
+04/30/2024 06:04:50 - INFO - __main__ -   Num examples = 5
+04/30/2024 06:04:50 - INFO - __main__ -   Num batches each epoch = 1
+04/30/2024 06:04:50 - INFO - __main__ -   Num Epochs = 500
+04/30/2024 06:04:50 - INFO - __main__ -   Instantaneous batch size per device = 1
+04/30/2024 06:04:50 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 1
+04/30/2024 06:04:50 - INFO - __main__ -   Gradient Accumulation steps = 1
+04/30/2024 06:04:50 - INFO - __main__ -   Total optimization steps = 500
+Steps:   0%|                                                                                                                      | 0/500 [00:00<?, ?it/s]
+--Call--
+> /opt/conda/envs/fgl/lib/python3.8/contextlib.py(117)__exit__()
+-> def __exit__(self, type, value, traceback):
+*** NameError: name 'accelerator' is not defined
+> /opt/conda/envs/fgl/lib/python3.8/contextlib.py(118)__exit__()
+  File "train_dreambooth_lora.py", line 1441, in <module>                                                                         | 0/500 [00:00<?, ?it/s]
+    args = parse_args()
+  File "train_dreambooth_lora.py", line 1305, in main
+    optimizer.zero_grad()
+  File "/opt/conda/envs/fgl/lib/python3.8/contextlib.py", line 118, in __exit__
+    if type is None:
+  File "/opt/conda/envs/fgl/lib/python3.8/contextlib.py", line 118, in __exit__
+    if type is None:
+  File "/opt/conda/envs/fgl/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/conda/envs/fgl/lib/python3.8/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
