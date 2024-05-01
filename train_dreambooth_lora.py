@@ -355,7 +355,7 @@ def parse_args(input_args=None):
     parser.add_argument(
         "--sample_batch_size", type=int, default=4, help="Batch size (per device) for sampling images."
     )
-    parser.add_argument("--num_train_epochs", type=int, default=1)
+    parser.add_argument("--num_train_epochs", type=int, default=2)
     parser.add_argument(
         "--max_train_steps",
         type=int,
@@ -764,7 +764,7 @@ def local_update(args, train_dataloader, accelerator, unet, vae, noise_scheduler
     for epoch in range(0, args.num_train_epochs):
         for step, batch in enumerate(train_dataloader):
             with accelerator.accumulate(unet):
-                pixel_values = batch["pixel_values"].to(dtype=weight_dtype)
+                pixel_values = batch["pixel_values"].to(dtype=weight_dtype).to(accelerator.device)
 
                 if vae is not None:
                     # Convert images to latent space
@@ -855,7 +855,9 @@ def local_update(args, train_dataloader, accelerator, unet, vae, noise_scheduler
             if accelerator.sync_gradients:
                 progress_bar.update(1)
                 global_step += 1
-    return unet
+    
+    unet = accelerator.unwrap_model(unet)
+    return unet.state_dict(), loss, global_step
 
 def main(args):
     if args.report_to == "wandb" and args.hub_token is not None:
@@ -1238,7 +1240,9 @@ def main(args):
         class_prompt_encoder_hidden_states=pre_computed_class_prompt_encoder_hidden_states,
         tokenizer_max_length=args.tokenizer_max_length,
     )
-    train_dataset = torch.utils.data.random_split(train_dataset, [len(train_dataset)//args.num_users for i in range(args.num_users)])
+    list_majority = [len(train_dataset)//args.num_users for i in range(args.num_users-1)]
+    list_round = [len(train_dataset) - sum(list_majority)]
+    train_dataset = torch.utils.data.random_split(train_dataset, list_majority+list_round)
 
     lr_scheduler = get_scheduler(
                 args.lr_scheduler,
@@ -1250,44 +1254,45 @@ def main(args):
             )
 
     # Dataset and DataLoaders creation:
-    breakpoint()
+    train_dataloader = [torch.utils.data.DataLoader(
+                train_dataset[i],
+                batch_size=args.train_batch_size,
+                shuffle=True,
+                collate_fn=lambda examples: collate_fn(examples, args.with_prior_preservation),
+                num_workers=args.dataloader_num_workers,
+            ) for i in range(args.num_users)]
+    if args.train_text_encoder:
+        unet, text_encoder, optimizer, lr_scheduler = accelerator.prepare(
+                        unet, text_encoder, optimizer, lr_scheduler)
+        for i in range(args.num_users):
+            train_dataloader[i] = accelerator.prepare(train_dataloader[i])
+    else:
+        unet, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
+                        unet, optimizer, train_dataloader, lr_scheduler)
+        for i in range(args.num_users):
+            train_dataloader[i] = accelerator.prepare(train_dataloader[i])
+        
     for com in tqdm(range(args.com_round)):
         local_weights = []
         m = max(int(args.frac * args.num_users), 1)
         idxs_users = np.random.choice(range(args.num_users), m, replace=False)
         for idx in idxs_users:
-            train_dataloader = torch.utils.data.DataLoader(
-                train_dataset[idx],
-                batch_size=args.train_batch_size,
-                shuffle=True,
-                collate_fn=lambda examples: collate_fn(examples, args.with_prior_preservation),
-                num_workers=args.dataloader_num_workers,
-            )
             # Prepare everything with our `accelerator`.
-            if args.train_text_encoder:
-                unet, text_encoder, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
-                    unet, text_encoder, optimizer, train_dataloader, lr_scheduler
-                )
-            else:
-                unet, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
-                    unet, optimizer, train_dataloader, lr_scheduler
-                )
-
-            unet = copy.deepcopy(unet)
-            unet.train()
+            local_unet = copy.deepcopy(unet)
+            local_unet.train()
             if args.train_text_encoder:
                 text_encoder.train()
             
             # Scheduler and math around the number of training steps.
             overrode_max_train_steps = False
-            num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
+            num_update_steps_per_epoch = math.ceil(len(train_dataloader[idx]) / args.gradient_accumulation_steps)
             if args.max_train_steps is None:
                 args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
                 overrode_max_train_steps = True
 
 
             # We need to recalculate our total training steps as the size of the training dataloader may have changed.
-            num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
+            num_update_steps_per_epoch = math.ceil(len(train_dataloader[idx]) / args.gradient_accumulation_steps)
             if overrode_max_train_steps:
                 args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
             # Afterwards we recalculate our number of training epochs
@@ -1305,52 +1310,33 @@ def main(args):
 
             logger.info("***** Running training *****")
             logger.info(f"  Num examples = {len(train_dataset)}")
-            logger.info(f"  Num batches each epoch = {len(train_dataloader)}")
+            logger.info(f"  Num batches each epoch = {len(train_dataloader[idx])}")
             logger.info(f"  Num Epochs = {args.num_train_epochs}")
             logger.info(f"  Instantaneous batch size per device = {args.train_batch_size}")
             logger.info(f"  Total train batch size (w. parallel, distributed & accumulation) = {total_batch_size}")
             logger.info(f"  Gradient Accumulation steps = {args.gradient_accumulation_steps}")
             logger.info(f"  Total optimization steps = {args.max_train_steps}")
-            global_step, first_epoch, initial_global_step  = 0, 0, 0
+            local_step, first_epoch, initial_local_step  = 0, 0, 0
 
-            progress_bar = tqdm(range(0, args.max_train_steps), initial=initial_global_step, desc="Steps", disable=not accelerator.is_local_main_process)
-            unet = local_update(args, train_dataloader, accelerator, unet, vae, noise_scheduler, text_encoder, weight_dtype, optimizer, params_to_optimize, lr_scheduler, progress_bar, global_step)
-            local_weights.append(copy.deepcopy(unet)) 
+            progress_bar = tqdm(range(0, args.max_train_steps), initial=initial_local_step, desc="Steps", disable=not accelerator.is_local_main_process)
+            w, loss, local_step = local_update(args, train_dataloader[idx], accelerator, local_unet, vae, noise_scheduler, text_encoder, weight_dtype, optimizer, params_to_optimize, lr_scheduler, progress_bar, local_step)
+            local_weights.append(copy.deepcopy(w))
+            if accelerator.is_main_process:
+                last_local_step = local_step
+                save_path = os.path.join(args.output_dir, f"checkpoint-user{idx}-epoch{local_step}")
+                accelerator.save_state(save_path)
+                logger.info(f"Saved state to {save_path}")
         
-        unet = average_weights(local_weights)
-
-        if accelerator.is_main_process:
-            # _before_ saving state, check if this save would set us over the `checkpoints_total_limit`
-            if args.checkpoints_total_limit is not None:
-                checkpoints = os.listdir(args.output_dir)
-                checkpoints = [d for d in checkpoints if d.startswith("checkpoint")]
-                checkpoints = sorted(checkpoints, key=lambda x: int(x.split("-")[1]))
-
-                # before we save the new checkpoint, we need to have at _most_ `checkpoints_total_limit - 1` checkpoints
-                if len(checkpoints) >= args.checkpoints_total_limit:
-                    num_to_remove = len(checkpoints) - args.checkpoints_total_limit + 1
-                    removing_checkpoints = checkpoints[0:num_to_remove]
-
-                    logger.info(
-                        f"{len(checkpoints)} checkpoints already exist, removing {len(removing_checkpoints)} checkpoints"
-                    )
-                    logger.info(f"removing checkpoints: {', '.join(removing_checkpoints)}")
-
-                    for removing_checkpoint in removing_checkpoints:
-                        removing_checkpoint = os.path.join(args.output_dir, removing_checkpoint)
-                        shutil.rmtree(removing_checkpoint)
-
-            save_path = os.path.join(args.output_dir, f"checkpoint-{global_step}")
-            accelerator.save_state(save_path)
-            logger.info(f"Saved state to {save_path}")
+        unet_weights = average_weights(local_weights)
+        unet = accelerator.unwrap_model(unet)
+        unet.load_state_dict(unet_weights)
+        
         # FL ends
         logs = {"loss": loss.detach().item(), "lr": lr_scheduler.get_last_lr()[0]}
         progress_bar.set_postfix(**logs)
-        accelerator.log(logs, step=global_step)
+        accelerator.log(logs, step=local_step)
 
-        if global_step >= args.max_train_steps:
-            break
-
+    epoch = 0 # debug
     if accelerator.is_main_process:
         if args.validation_prompt is not None and epoch % args.validation_epochs == 0:
             # create pipeline

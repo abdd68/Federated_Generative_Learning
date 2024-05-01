@@ -1,5 +1,5 @@
 accelerate launch train_dreambooth_lora.py \
-  --num_users=2 \
+  --num_users=3 \
   --instance_data_dir="./dog" \
   --output_dir="./output" \
   --instance_prompt="a photo of sks dog" \
@@ -11,7 +11,7 @@ accelerate launch train_dreambooth_lora.py \
   --report_to="wandb" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
-  --max_train_steps=50 \
+  --max_train_steps=5 \
   --validation_prompt="A photo of sks dog in a bucket" \
   --validation_epochs=50 \
   --seed="0" \

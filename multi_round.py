@@ -145,10 +145,9 @@ if __name__ == '__main__':
     for com in tqdm(range(args.com_round)):
         local_weights = []
         if args.data_type == 'domainnet':
-            # for domain in args.domains:
-            #     w = local_update(copy.deepcopy(global_model), train_dataset[domain], n_epochs=args.local_ep, lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay, if_log=True)
-            #     local_weights.append(copy.deepcopy(w))
-            pass
+            for domain in args.domains:
+                w = local_update(copy.deepcopy(global_model), train_dataset[domain], n_epochs=args.local_ep, lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay, if_log=True)
+                local_weights.append(copy.deepcopy(w))
         elif "image" in args.data_type:
             m = max(int(args.frac * args.num_users), 1)
             idxs_users = np.random.choice(range(args.num_users), m, replace=False)
