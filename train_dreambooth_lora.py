@@ -855,6 +855,10 @@ def local_update(args, train_dataloader, accelerator, unet, vae, noise_scheduler
             if accelerator.sync_gradients:
                 progress_bar.update(1)
                 global_step += 1
+        # FL ends
+        logs = {"loss": loss.detach().item(), "lr": lr_scheduler.get_last_lr()[0]}
+        progress_bar.set_postfix(**logs)
+        accelerator.log(logs, step=epoch)
     
     unet = accelerator.unwrap_model(unet)
     return unet.state_dict(), loss, global_step
@@ -1322,7 +1326,6 @@ def main(args):
             w, loss, local_step = local_update(args, train_dataloader[idx], accelerator, local_unet, vae, noise_scheduler, text_encoder, weight_dtype, optimizer, params_to_optimize, lr_scheduler, progress_bar, local_step)
             local_weights.append(copy.deepcopy(w))
             if accelerator.is_main_process:
-                last_local_step = local_step
                 save_path = os.path.join(args.output_dir, f"checkpoint-user{idx}-epoch{local_step}")
                 accelerator.save_state(save_path)
                 logger.info(f"Saved state to {save_path}")
@@ -1330,16 +1333,12 @@ def main(args):
         unet_weights = average_weights(local_weights)
         unet = accelerator.unwrap_model(unet)
         unet.load_state_dict(unet_weights)
-        
-        # FL ends
-        logs = {"loss": loss.detach().item(), "lr": lr_scheduler.get_last_lr()[0]}
-        progress_bar.set_postfix(**logs)
-        accelerator.log(logs, step=local_step)
 
     epoch = 0 # debug
     if accelerator.is_main_process:
         if args.validation_prompt is not None and epoch % args.validation_epochs == 0:
             # create pipeline
+            breakpoint()
             pipeline = DiffusionPipeline.from_pretrained(
                 args.pretrained_model_name_or_path,
                 unet=unwrap_model(unet),
@@ -1398,6 +1397,7 @@ def main(args):
         images = []
         if args.validation_prompt and args.num_validation_images > 0:
             pipeline_args = {"prompt": args.validation_prompt, "num_inference_steps": 25}
+            breakpoint()
             images = log_validation(
                 pipeline,
                 args,
